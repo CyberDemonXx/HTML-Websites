@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Hacker Zone</title>
+    <style>
+        /* Body styling */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #00ff00;
+            font-family: "Courier New", Courier, monospace;
+            overflow: hidden;
+        }
+
+        /* Flickering text animation */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0;
+            }
+        }
+
+        /* Header styling */
+        header {
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            animation: flicker 2s infinite;
+        }
+
+        /* Terminal effect styling */
+        .terminal {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background: #111;
+            border: 2px solid #00ff00;
+            border-radius: 8px;
+            box-shadow: 0 0 20px #00ff00;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .terminal p {
+            margin: 5px;
+        }
+
+        .command-line {
+            color: #00ff00;
+        }
+
+        .blinking {
+            display: inline-block;
+            animation: blink 1s steps(2, start) infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Scrolling "Matrix" background */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .matrix-bg span {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(0, 255, 0, 0.8);
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -100px;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    <header>
+        <h1>CYBER H4CK3R Z0N3</h1>
+    </header>
+    <div class="terminal">
+        <p class="command-line">$ Initializing system...</p>
+        <p class="command-line">$ Loading encryption protocols...</p>
+        <p class="command-line">$ Hack the planet<span class="blinking">_</span></p>
+    </div>
+
+    <script>
+        // Dynamic Matrix background
+        const matrixBg = document.querySelector(".matrix-bg");
+        const width = window.innerWidth / 20;
+        const height = window.innerHeight / 20;
+
+        for (let i = 0; i < width * 3; i++) {
+            const span = document.createElement("span");
+            span.textContent = Math.floor(Math.random() * 10);
+            span.style.left = Math.random() * 100 + "vw";
+            span.style.animationDelay = Math.random() * 10 + "s";
+            span.style.animationDuration = Math.random() * 10 + 5 + "s";
+            matrixBg.appendChild(span);
+        }
+    </script>
+</body>
+</html>
